@@ -16,17 +16,17 @@ class FuelController < ApplicationController
 
   def self.paginated_action(options={})
     before_filter(options) do |controller|
+
       # Set defaults
-      @pagination_current_page = 1
+      @pagination_current_page = params[:page] ? params[:page] : 1
       @pagination_per_page = nil
 
-      if request.headers['Range-Unit'] == 'items' && request.headers['Range'].present?
+      if Fuel.configuration.header_pagination && request.headers['Range-Unit'] == 'items' && request.headers['Range'].present?
         if request.headers['Range'] =~ /(\d+)-(\d*)/
           requested_from, requested_to = $1.to_i, ($2.present? ? $2.to_i : Float::INFINITY)
         end
 
         # TODO: Improve invalid range handling
-
         @pagination_per_page = requested_to - requested_from + 1
         @pagination_current_page = requested_to / @pagination_per_page + 1
       end

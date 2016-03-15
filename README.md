@@ -76,6 +76,45 @@ You can add your own logo to be used in the Blog Admin backoffice. Add your logo
 config.logo = "your-image.png"
 ```
 
+Pagination
+--------------------
+
+Pagination can be accomplished in one of two ways.  
+___Only one option can be enabled at any time.___
+```ruby
+# this will allow you to pass a page param along with your request
+# example /blog/posts.json?page=1
+config.paginates_per = 500 #number of posts per page
+```
+or
+```ruby
+config.header_pagination = true #passes pagination through headers
+```
+
+Here is an example HTTP transaction that requests the first twenty-five
+items and a response that provides them and says there are one
+hundred total items.
+
+Request
+
+```HTTP
+GET /blog/posts.json HTTP/1.1
+Range-Unit: items
+Range: 0-24
+```
+
+Response
+
+```HTTP
+HTTP/1.1 206 Partial Content
+Content-Range: 0-24/100
+Range-Unit: items
+Content-Type: application/json
+
+[ etc, etc, ... ]
+```
+
+For plug and play usability the header_pagination config works well with [Angular Paginate Anything](https://github.com/begriffs/angular-paginate-anything)
 
 Image Uploading
 --------------------

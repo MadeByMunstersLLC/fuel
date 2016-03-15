@@ -3,13 +3,14 @@ module Fuel
     include ActionView::Helpers::TextHelper
     layout Fuel.configuration.layout if Fuel.configuration.layout
     before_filter :define_title
+    paginated_action only: [:index]
 
     def define_title
       @blog_title = Fuel.configuration.blog_title
     end
 
     def index
-      @posts = Fuel::Post.recent_published_posts.page(params[:page])
+      @posts = Fuel::Post.recent_published_posts.page(@pagination_current_page).per(@pagination_per_page)
       @title = Fuel.configuration.blog_title
       @description = Fuel.configuration.blog_description
 

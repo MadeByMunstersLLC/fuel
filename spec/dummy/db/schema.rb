@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616184619) do
+ActiveRecord::Schema.define(version: 20151014140731) do
 
   create_table "fuel_authors", force: :cascade do |t|
     t.string   "first_name"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20150616184619) do
     t.text     "seo_description"
     t.integer  "author_id"
     t.datetime "published_at"
+    t.string   "format",                      default: "html"
   end
 
   add_index "fuel_posts", ["slug"], name: "index_fuel_posts_on_slug", unique: true

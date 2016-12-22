@@ -1,9 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-
+require 'dotenv'
 Bundler.require(*Rails.groups)
-Dotenv::Railtie.load
+Dotenv.load
 require "fuel"
 
 module Dummy

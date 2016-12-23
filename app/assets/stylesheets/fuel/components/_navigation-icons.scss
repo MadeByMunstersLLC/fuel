@@ -17,14 +17,11 @@ $navigation-icons:     image-url('fuel/icons/navigation-icons.svg');
   display: inline-block;
   height: $navigation-height;
   width: $navigation-width;
-
 }
 
 
 // List
 $icons: (
-  authors  $navigation-width * 0,
-  posts    $navigation-width * 1,
   settings $navigation-width * 3,
   picture  $navigation-width * 4,
 );
@@ -39,4 +36,8 @@ $icons: (
     background-position: -($position * 1) 0;
     @extend %navigation-icon;
   }
+}
+
+.navbar-link-icon {
+  margin: 5px 0;
 }

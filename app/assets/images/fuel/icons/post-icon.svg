@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="40px" viewBox="0 0 30 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>post-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="post-icon" transform="translate(-7.000000, -2.000000)">
+            <rect id="cont" fill="#181818" opacity="0" x="0" y="0" width="44" height="44"></rect>
+            <polygon id="Rectangle-34-Copy" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="26 3 36 13 36 41 8 41 8 3"></polygon>
+            <path d="M14,13 L20,13" id="Path-76" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M14,19 L30,19" id="Path-76-Copy-2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M14,25 L30,25" id="Path-76-Copy-3" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M14,31 L30,31" id="Path-76-Copy-4" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <polyline id="Path-133" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="26 4 26 13 35 13"></polyline>
+        </g>
+    </g>
+</svg>

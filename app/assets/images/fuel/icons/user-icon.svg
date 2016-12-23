@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="41px" viewBox="0 0 36 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>user-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="user-icon" transform="translate(-4.000000, -1.000000)">
+            <rect id="cont" fill="#181818" opacity="0" x="0" y="0" width="44" height="44"></rect>
+            <path d="M29,11 L29,14 C29,17.8659932 25.8659932,21 22,21 C18.1340068,21 15,17.8659932 15,14 L15,10" id="Oval-26" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M27.8669436,25.1330564 C34.1621396,26.0384117 39,31.4542344 39,38 L39,38.9989566 C39,40.0999011 38.1046051,41 37.0000796,41 L6.9999204,41 C5.89194115,41 5,40.1041023 5,38.9989566 L5,38 C5,31.4542344 9.83786037,26.0384117 16.1330564,25.1330564 L22,31 L27.8669436,25.1330564 Z" id="Oval-28" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M15,11 L15,9.00208688 C15,6.79179533 16.7894101,5 19,5 L19,5 L19,2 L24.5847454,3.11694908 C27.0232232,3.60464464 29,6.02469003 29,8.49261107 L29,11" id="Path-187" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(22.000000, 6.500000) scale(-1, 1) translate(-22.000000, -6.500000) "></path>
+            <path d="M29,13 C29,10.790861 27.209139,9 25,9 L19,9" id="Oval-43" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M15.7966635,7.39594274 C16.5262393,8.3698074 17.689525,9 19,9" id="Oval-43" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>

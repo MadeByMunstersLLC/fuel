@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="40px" viewBox="0 0 36 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>cat-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="cat-icon" transform="translate(-7.000000, -2.000000)">
+            <rect id="cont" fill="#181818" opacity="0" x="0" y="0" width="44" height="44"></rect>
+            <path d="M36,19 L36,39.008845 C36,40.1085295 35.1001025,41 34.0087557,41 L9.99124431,41 C8.89151044,41 8,40.0981492 8,38.9971408 L8,5.00285922 C8,3.89671062 8.8998975,3 9.99124428,3 L34.0087553,3 C35.1084891,3 35.9999996,3.88670635 35.9999997,4.99810135 L36,11" id="Rectangle-34-Copy" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"></path>
+            <path d="M32,3 L32,41.0131556" id="Path-39" stroke="#FFFFFF" stroke-width="2"></path>
+            <polygon id="Rectangle-103" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="32 11 42 11 39 15 42 19 32 19"></polygon>
+        </g>
+    </g>
+</svg>

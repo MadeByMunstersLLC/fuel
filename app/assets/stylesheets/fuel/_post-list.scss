@@ -39,6 +39,8 @@ $resource-date-color:        $grey-dark;
 
   // Resource list styles
   .post-item--date,
+  .category-item--title,
+  .tag-item--title,
   .author-item--title {
     @include font-type($primary-sans-serif, normal, 700);
     @include rem(margin-bottom, 5px);

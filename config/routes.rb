@@ -14,6 +14,8 @@ Fuel::Engine.routes.draw do
         end
       end
       resources :authors
+      resources :categories
+      resources :tags
     end
 
     get '/posts'=> 'posts#index'

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="36px" viewBox="0 0 40 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>tag-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="tag-icon" transform="translate(-2.000000, -5.000000)">
+            <rect id="cont" fill="#181818" opacity="0" x="0" y="0" width="44" height="44"></rect>
+            <path d="M21,34 L38.9971408,34 C40.0981492,34 41,33.1084896 41,32.0087557 L41,7.99124431 C41,6.89989752 40.1032894,6 38.9971408,6 L5.00285922,6 C3.90185079,6 3,6.89151044 3,7.99124431 L3,32.0087557 C3,33.1001025 3.89671062,34 5.00285922,34 L9,34 L15,40 L21,34 Z" id="Rectangle-34-Copy-5" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"></path>
+            <path d="M9,14 L35,14" id="Path-147" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M9,20 L35,20" id="Path-147-Copy" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M9,26 L35,26" id="Path-147-Copy-2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+    </g>
+</svg>

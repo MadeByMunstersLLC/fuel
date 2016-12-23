@@ -42,6 +42,11 @@ module Fuel
       end
 
       def destroy
+        @category.posts.each do |post|
+          post.category = nil
+          post.save
+        end
+        
         @category.destroy
         redirect_to fuel.admin_categories_path, notice: "Category was successfully deleted"
       end

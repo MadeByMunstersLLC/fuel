@@ -11,12 +11,6 @@ class CreateFuelTagsAndCategory < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :fuel_post_categories do |t|
-      t.references :post
-      t.references :category
-      t.timestamps
-    end
-
     create_table :fuel_post_tags do |t|
       t.references :post
       t.references :tag
@@ -24,6 +18,7 @@ class CreateFuelTagsAndCategory < ActiveRecord::Migration
     end
 
     remove_column :fuel_posts, :tag
+    add_reference :fuel_posts, :category, foreign_key: true
   end
 
   def down
@@ -33,9 +28,9 @@ class CreateFuelTagsAndCategory < ActiveRecord::Migration
 
     drop_table :fuel_tags
     drop_table :fuel_categories
-    drop_table :fuel_post_categories
     drop_table :fuel_post_tags
 
     add_column :fuel_posts, :tag, :string
+    remove_reference :fuel_posts, :category
   end
 end

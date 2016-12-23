@@ -7,8 +7,7 @@ module Fuel
 
     belongs_to :author
 
-    has_one :post_category
-    has_one :category, through: :post_category
+    belongs_to :category
 
     has_many :post_tags
     has_many :tags, through: :post_tags

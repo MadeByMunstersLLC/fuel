@@ -37,13 +37,6 @@ ActiveRecord::Schema.define(version: 20161223181532) do
     t.datetime "updated_at"
   end
 
-  create_table "fuel_post_categories", force: :cascade do |t|
-    t.integer  "post_id"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "fuel_post_tags", force: :cascade do |t|
     t.integer  "post_id"
     t.integer  "tag_id"
@@ -70,6 +63,7 @@ ActiveRecord::Schema.define(version: 20161223181532) do
     t.integer  "author_id"
     t.datetime "published_at"
     t.string   "format",                      default: "html"
+    t.integer  "category_id"
   end
 
   add_index "fuel_posts", ["slug"], name: "index_fuel_posts_on_slug", unique: true

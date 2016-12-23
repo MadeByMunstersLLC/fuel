@@ -16,7 +16,7 @@ module Fuel
 
       respond_to do |format|
         format.html
-        format.json { render json: @posts, :methods => [:avatar_url, :featured_image_url] }
+        format.json { render json: @posts, :methods => [:avatar_url, :featured_image_url], :include => [{tags: {only: [:id, :name]}}, {category: {only: [:id, :name]}}] }
       end
     end
 

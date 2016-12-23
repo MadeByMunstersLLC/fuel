@@ -7,6 +7,12 @@ module Fuel
 
     belongs_to :author
 
+    has_one :post_category
+    has_one :category, through: :post_category
+
+    has_many :post_tags
+    has_many :tags, through: :post_tags
+
     if Rails.version[0].to_i < 4
       attr_accessible :tag, :author_id, :content, :title, :teaser, :featured_image, :seo_title, :seo_description, :published, :published_at, :format
     end

@@ -1,0 +1,22 @@
+<aside class="page-sidebar tag-sidebar">
+  <header class="page-sidebar--header">
+    <div class="header-container--left">
+      <h5 class="header--title">Tags</h5>
+    </div>
+    <div class="header-container--right">
+      <ul class="header-container--right__actions">
+        <!-- <li><i class="search-icon">Search</i></li> -->
+        <li><%= link_to 'New Tag', fuel.new_admin_tag_path, class: 'add-icon' %></li>
+      </ul>
+    </div>
+  </header>
+  <ul class="resource-list tag-list">
+    <% @tags.each do |tag| %>
+      <%= link_to fuel.edit_admin_tag_path(tag) do %>
+        <li class="resource-item tag-item <%= 'active' if @tag && @tag == tag %>">
+          <p class="tag-item--title"><%= tag.name %></p>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</aside>

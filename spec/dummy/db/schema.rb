@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616184619) do
+ActiveRecord::Schema.define(version: 20161223181532) do
 
   create_table "fuel_authors", force: :cascade do |t|
     t.string   "first_name"
@@ -31,8 +31,20 @@ ActiveRecord::Schema.define(version: 20150616184619) do
     t.date     "start_date"
   end
 
+  create_table "fuel_categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fuel_post_tags", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "fuel_posts", force: :cascade do |t|
-    t.string   "tag"
     t.string   "author"
     t.text     "content"
     t.string   "title"
@@ -50,8 +62,16 @@ ActiveRecord::Schema.define(version: 20150616184619) do
     t.text     "seo_description"
     t.integer  "author_id"
     t.datetime "published_at"
+    t.string   "format",                      default: "html"
+    t.integer  "category_id"
   end
 
   add_index "fuel_posts", ["slug"], name: "index_fuel_posts_on_slug", unique: true
+
+  create_table "fuel_tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

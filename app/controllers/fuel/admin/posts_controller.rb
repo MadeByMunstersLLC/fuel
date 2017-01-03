@@ -18,6 +18,8 @@ module Fuel
         update_published_at
         @post = Fuel::Post.new(@params_hash)
         set_message
+        set_tags
+        set_category
 
         if @post.save
           redirect_to fuel.admin_posts_path, notice: "Your blog post was successfully #{@message}."
@@ -35,6 +37,8 @@ module Fuel
         update_published_at
         @post.attributes = @params_hash
         set_message
+        set_tags
+        set_category
 
         if @post.save
           redirect_to fuel.edit_admin_post_path(@post), notice: "Post was updated and #{@message}"
@@ -65,7 +69,15 @@ module Fuel
       private
 
         def post_params
-          params.require(:fuel_post).permit(:tag, :author_id, :content, :title, :teaser, :featured_image, :published, :published_at, :format)
+          params.require(:fuel_post).permit(:author_id, :content, :title, :teaser, :featured_image, :published, :published_at, :format)
+        end
+
+        def category_params
+          params.require(:fuel_post).permit(:category)[:category]
+        end
+
+        def tag_params
+          params.require(:fuel_post).permit(tags: [])[:tags].delete_if { |tag| tag.empty? }
         end
 
         def update_published_at
@@ -77,6 +89,19 @@ module Fuel
 
         def set_message
           @message = @post.published ? "posted" : "saved"
+        end
+
+        def set_tags
+          @post.tags.destroy_all
+          if tag_params
+            @post.tags << Fuel::Tag.find(tag_params)
+          end
+        end
+
+        def set_category
+          if category_params
+            @post.category = Fuel::Category.find(category_params)
+          end
         end
 
         def find_post

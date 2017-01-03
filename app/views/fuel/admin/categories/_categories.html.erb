@@ -1,0 +1,22 @@
+<aside class="page-sidebar category-sidebar">
+  <header class="page-sidebar--header">
+    <div class="header-container--left">
+      <h5 class="header--title">Categories</h5>
+    </div>
+    <div class="header-container--right">
+      <ul class="header-container--right__actions">
+        <!-- <li><i class="search-icon">Search</i></li> -->
+        <li><%= link_to 'New Category', fuel.new_admin_category_path, class: 'add-icon' %></li>
+      </ul>
+    </div>
+  </header>
+  <ul class="resource-list category-list">
+    <% @categories.each do |category| %>
+      <%= link_to fuel.edit_admin_category_path(category) do %>
+        <li class="resource-item category-item <%= 'active' if @category && @category == category %>">
+          <p class="category-item--title"><%= category.name %></p>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</aside>

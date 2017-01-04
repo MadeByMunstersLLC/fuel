@@ -1,3 +1,4 @@
+# This migration comes from fuel (originally 20170103220715)
 class AddFriendlyIdToTagsAndCategories < ActiveRecord::Migration
   def up
     # Create columns

@@ -14,14 +14,12 @@ Fuel::Engine.routes.draw do
         end
       end
       resources :authors
-      resources :categories
-      resources :tags
+      resources :categories, param: :slug
+      resources :tags, param: :slug
     end
 
-    get '/posts'=> 'posts#index'
-    resources :posts, only: [:index, :show], path: ''
-    get '/posts/:id' => 'posts#redirect'
-
+    resources :posts, only: [:index, :show]
+    resources :categories, only: [:index]
   end
 
 end

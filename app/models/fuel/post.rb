@@ -7,7 +7,7 @@ module Fuel
 
     belongs_to :author
 
-    belongs_to :category
+    belongs_to :category, counter_cache: true
 
     has_many :post_tags, dependent: :destroy
     has_many :tags, through: :post_tags
@@ -27,6 +27,7 @@ module Fuel
     paginates_per Fuel.configuration.paginates_per.to_i
 
     scope :recent_published_posts, -> { published.recent }
+    scope :recent_published_posts_by_category, ->(category_slug) { joins(:category).merge(Fuel::Category.where(slug: category_slug)).order("published DESC") }
     scope :published, -> { where(published: true) }
     scope :recent, -> { order("published_at DESC").order("created_at DESC") }
 

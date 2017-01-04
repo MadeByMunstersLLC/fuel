@@ -39,7 +39,7 @@ module Fuel
         set_message
         set_tags
         set_category
-
+        @post.slug = nil
         if @post.save
           redirect_to fuel.edit_admin_post_path(@post), notice: "Post was updated and #{@message}"
         else

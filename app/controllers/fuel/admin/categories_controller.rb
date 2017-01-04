@@ -33,7 +33,7 @@ module Fuel
         @params_hash = Rails.version[0].to_i < 4 ? params[:fuel_category] : category_params
 
         @category.attributes = @params_hash
-
+        @category.slug = nil
         if @category.save
           redirect_to fuel.edit_admin_category_path(@category), notice: "Category was updated and #{@message}"
         else
@@ -52,16 +52,14 @@ module Fuel
       end
 
       def show
-        @author = Fuel::Category.find(params[:id])
-
         respond_to do |format|
-          format.json { render json: @author }
+          format.json { render json: @category }
         end
       end
 
       private
         def find_category
-          @category = Fuel::Category.find_by_id(params[:id])
+          @category = Fuel::Category.find_by_slug(params[:slug])
         end
 
         def find_categories

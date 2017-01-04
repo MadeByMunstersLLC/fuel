@@ -10,7 +10,12 @@ module Fuel
     end
 
     def index
-      @posts = Fuel::Post.recent_published_posts.page(@pagination_current_page).per(@pagination_per_page)
+      if category_slug
+        @posts = Fuel::Post.recent_published_posts_by_category(category_slug)
+      else
+        @posts = Fuel::Post.recent_published_posts
+      end
+      @posts = @posts.page(@pagination_current_page).per(@pagination_per_page)
       @title = Fuel.configuration.blog_title
       @description = Fuel.configuration.blog_description
 
@@ -46,9 +51,13 @@ module Fuel
 
     private
 
-      def truncate_on_space(text = "", length)
-        truncate(text, length: length, separator: ' ')
-      end
+    def category_slug
+      params[:category]
+    end
+
+    def truncate_on_space(text = "", length)
+      truncate(text, length: length, separator: ' ')
+    end
 
   end
 end

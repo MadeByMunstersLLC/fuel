@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161223181532) do
+ActiveRecord::Schema.define(version: 20170104182956) do
 
   create_table "fuel_authors", force: :cascade do |t|
     t.string   "first_name"
@@ -35,7 +35,11 @@ ActiveRecord::Schema.define(version: 20161223181532) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug",                    null: false
+    t.integer  "posts_count", default: 0
   end
+
+  add_index "fuel_categories", ["slug"], name: "index_fuel_categories_on_slug", unique: true
 
   create_table "fuel_post_tags", force: :cascade do |t|
     t.integer  "post_id"
@@ -72,6 +76,9 @@ ActiveRecord::Schema.define(version: 20161223181532) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug",       null: false
   end
+
+  add_index "fuel_tags", ["slug"], name: "index_fuel_tags_on_slug", unique: true
 
 end

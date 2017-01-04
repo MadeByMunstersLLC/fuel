@@ -18,9 +18,7 @@ Fuel::Engine.routes.draw do
       resources :tags, param: :slug
     end
 
-    get '/posts' => 'posts#index'
     resources :posts, only: [:index, :show]
-    get '/posts/:id' => 'posts#redirect'
     resources :categories, only: [:index]
   end
 

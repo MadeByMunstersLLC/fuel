@@ -33,7 +33,7 @@ module Fuel
         @params_hash = Rails.version[0].to_i < 4 ? params[:fuel_tag] : tag_params
 
         @tag.attributes = @params_hash
-
+        @tag.slug = nil
         if @tag.save
           redirect_to fuel.edit_admin_tag_path(@tag), notice: "tag was updated and #{@message}"
         else
@@ -47,16 +47,14 @@ module Fuel
       end
 
       def show
-        @author = Fuel::Tag.find(params[:id])
-
         respond_to do |format|
-          format.json { render json: @author }
+          format.json { render json: @tag }
         end
       end
 
       private
         def find_tag
-          @tag = Fuel::Tag.find_by_id(params[:id])
+          @tag = Fuel::Tag.find_by_slug(params[:slug])
         end
 
         def find_tags

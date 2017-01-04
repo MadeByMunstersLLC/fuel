@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161223181532) do
+ActiveRecord::Schema.define(version: 20170103221003) do
 
   create_table "fuel_authors", force: :cascade do |t|
     t.string   "first_name"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20161223181532) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
+    t.integer  "posts_count", default: 0
   end
 
   create_table "fuel_post_tags", force: :cascade do |t|
@@ -72,6 +74,7 @@ ActiveRecord::Schema.define(version: 20161223181532) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
 end

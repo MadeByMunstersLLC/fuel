@@ -11,7 +11,13 @@ module Fuel
 
     def index
       if category_slug
-        @posts = Fuel::Post.recent_published_posts_by_category(category_slug)
+        category = Fuel::Category.find_by_slug(category_slug)
+
+        if category.nil?
+          raise ActiveRecord::RecordNotFound.new("Could not find Category with slug '#{category_slug}'")
+        end
+
+        @posts = Fuel::Post.recent_published_posts.where(category: category)
       else
         @posts = Fuel::Post.recent_published_posts
       end

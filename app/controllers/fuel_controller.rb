@@ -2,9 +2,18 @@ class FuelController < ApplicationController
 
   helper_method :s3_bucket
 
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found_error
 
   def not_found
     raise ActionController::RoutingError.new('Not Found')
+  end
+
+  def not_found_error(exception)
+    # render json: {error: "not-found"}.to_json, status: 404
+    respond_to do |format|
+      format.html
+      format.json { render json: {error: "not-found"}.to_json, status: 404 }
+    end
   end
 
   def s3_bucket

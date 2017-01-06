@@ -39,7 +39,6 @@ module Fuel
         set_message
         set_tags
         set_category
-        @post.slug = nil
         if @post.save
           redirect_to fuel.edit_admin_post_path(@post), notice: "Post was updated and #{@message}"
         else
@@ -105,7 +104,7 @@ module Fuel
         end
 
         def find_post
-          @post = Fuel::Post.find(params[:id])
+          @post = Fuel::Post.find_by_slug(params[:id])
         end
 
         def find_posts

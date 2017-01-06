@@ -50,10 +50,6 @@ module Fuel
       self.class.recent.where("published_at >= ? AND id != ?", published_at, id).last
     end
 
-    def should_generate_new_friendly_id?
-      new_record? #Don't generate new id on edit
-    end
-
     def save_as_draft
       self.published = false
     end

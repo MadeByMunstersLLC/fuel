@@ -19,7 +19,7 @@
     <fieldset>
       <div class="form-group-half">
         <%= f.label :tags %>
-        <%= f.select :tags, options_from_collection_for_select(Fuel::Tag.all, :id, :name, @post.tags.pluck(:id)), {}, {multiple: true, class: "multi-select"} %>
+        <%= f.select :tags, options_from_collection_for_select(Fuel::Tag.all, :id, :name, @post.tags ? @post.tags.pluck(:id) : nil), {}, {multiple: true, class: "multi-select"} %>
       </div>
       <div class="form-group-half">
         <%= f.label :category %>

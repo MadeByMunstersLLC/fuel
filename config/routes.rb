@@ -8,7 +8,7 @@ Fuel::Engine.routes.draw do
       root to: 'posts#index'
       post "posts/preview" => 'posts#preview'
       get "posts/:slug/posts/preview" => 'posts#preview'
-      resources :posts do
+      resources :posts, param: :slug do
         member do
           get 'content'
         end

@@ -3,7 +3,7 @@ module Fuel
     class CategoriesController < AdminController
       layout "fuel/application"
       before_filter :find_categories
-      before_filter :find_category, only: [:edit, :update, :destroy]
+      before_filter :find_category, only: [:edit, :update, :destroy, :show]
       before_filter :set_url, only: [:new, :create, :edit, :update]
 
       def index
@@ -46,7 +46,7 @@ module Fuel
           post.category = nil
           post.save
         end
-        
+
         @category.destroy
         redirect_to fuel.admin_categories_path, notice: "Category was successfully deleted"
       end

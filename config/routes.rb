@@ -19,7 +19,7 @@ Fuel::Engine.routes.draw do
     end
 
     resources :posts, only: [:index, :show]
-    resources :categories, only: [:index]
+    resources :categories, only: [:index, :show], param: :slug
     get '/:id' => 'posts#redirect'
   end
 

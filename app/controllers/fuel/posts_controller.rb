@@ -27,7 +27,7 @@ module Fuel
 
       respond_to do |format|
         format.html
-        format.json { render json: @posts, :methods => [:avatar_url, :featured_image_url], :include => [{tags: {only: [:id, :name]}}, {category: {only: [:id, :name]}}] }
+        format.json { render json: @posts, :methods => [:avatar_url, :featured_image_url], :include => [{tags: {only: [:id, :name]}}, {category: {only: [:id, :name, :slug]}}] }
       end
     end
 
@@ -39,7 +39,7 @@ module Fuel
 
       respond_to do |format|
         format.html
-        format.json { render json: @post, :methods => [:avatar_url, :featured_image_url], :include => [{tags: {only: [:id, :name]}}, {category: {only: [:id, :name]}}] }
+        format.json { render json: @post, :methods => [:avatar_url, :featured_image_url], :include => [{tags: {only: [:id, :name]}}, {category: {only: [:id, :name, :slug]}}] }
       end
     end
 

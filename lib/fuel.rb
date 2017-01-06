@@ -26,6 +26,9 @@ module Fuel
     block.call(configuration)
     configure_aws
     Rails.application.config.assets.precompile += %w( fuel/wysihtml.css )
+    Rails.application.config.assets.precompile += %w( fuel/logo.svg )
+    Rails.application.config.assets.precompile += %w( fuel/default-img.jpg )
+    Rails.application.config.assets.precompile += ['fuel/icons/*']
   end
 
   def self.configure_aws

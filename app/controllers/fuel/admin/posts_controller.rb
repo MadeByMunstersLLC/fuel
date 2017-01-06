@@ -105,7 +105,7 @@ module Fuel
         end
 
         def find_post
-          @post = Fuel::Post.find_by_slug(params[:slug])
+          @post = Fuel::Post.find(params[:id])
         end
 
         def find_posts

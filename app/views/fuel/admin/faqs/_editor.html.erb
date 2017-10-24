@@ -1,0 +1,83 @@
+<script>
+  $(function() {
+    $body = $("body");
+
+    var questionId = "fuel_faq_question_html";
+    var answerId = "fuel_faq_answer_html";
+    var editorStylesheetPath = "<%= stylesheet_path('fuel/wysihtml') %>";
+    var editorSubmitUrl = '<%= s3_direct_post.url %>';
+    var editorFormData = JSON.parse('<%= s3_direct_post.fields.to_json.html_safe %>');
+    var editorHostUrl = '//<%= @s3_direct_post.url.host %>/';
+
+    if ($("body").hasClass("faqs-controller")){
+
+      new wysihtml5.Editor(questionId, { // id of textarea element
+        toolbar:      "editor1", // id of toolbar element
+        parserRules:  wysihtml5ParserRules,
+        stylesheets: editorStylesheetPath
+      });
+      
+      new wysihtml5.Editor(answerId, { // id of textarea element
+        toolbar:      "editor2", // id of toolbar element
+        parserRules:  wysihtml5ParserRules,
+        stylesheets: editorStylesheetPath
+      });
+      $('.form-container--full').delay(300).queue(function (next) { $(this).css('display', 'block');});
+      <% if s3_direct_post %>
+      $('.directUpload').each(function(i, elem) {
+        var fileInput    = $(elem);
+        var submitButton = $(".save-button");
+        var progressBar  = $("<div class='bar'></div>");
+        var barContainer = $("<div class='progress'></div>").append(progressBar);
+
+        fileInput.after(barContainer);
+        fileInput.fileupload({
+          fileInput:       fileInput,
+          url:             editorSubmitUrl,
+          type:            'POST',
+          autoUpload:       true,
+          formData:         editorFormData,
+          paramName:        'file', // S3 does not like nested name fields i.e. name="user[avatar_url]"
+          dataType:         'XML',  // S3 returns XML if success_action_status is set to 201
+          replaceFileInput: false,
+          progressall: function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            progressBar.css('width', progress + '%')
+          },
+          start: function (e) {
+            submitButton.prop('disabled', true);
+
+            progressBar.
+              css('background', '#C4DC6E').
+              css('display', 'block').
+              text("Loading...");
+          },
+          done: function(e, data) {
+            submitButton.prop('disabled', false);
+            progressBar.text("Uploading done");
+
+            // extract key and generate URL from response
+            var key   = $(data.jqXHR.responseXML).find("Key").text();
+
+            var newUrl   = editorHostUrl + key;
+            console.log(newUrl);
+
+            // set url in form
+            $("#imageUrl").val(newUrl);
+          },
+          fail: function(e, data) {
+            submitButton.prop('disabled', false);
+
+            progressBar.
+              css("background", "#F7917C").
+              text("Failed");
+          }
+        });
+      });
+      <% end %>
+
+      
+    };
+
+  });
+</script>

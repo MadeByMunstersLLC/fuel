@@ -14,7 +14,7 @@
     <% @faqs.each do |faq| %>
       <%= link_to fuel.edit_admin_faq_path(faq) do %>
         <li class="resource-item faq-item <%= 'active' if faq && @faq == faq %>">
-          <p class="faq-item--category"><%= "Category: #{faq.faq_category ? faq.faq_category.name : ''}" %></p>
+          <p class="faq-item--category"><%= "Category: #{faq.faq_category ? faq.faq_category.name : 'None'}" %></p>
           <h5 class="faq-item--title"><%= truncate_html(faq.question, length: 60).html_safe %></h5>
           <p class="faq-item--content"><%= truncate_html(faq.answer, length: 60).html_safe %></p>
         </li>

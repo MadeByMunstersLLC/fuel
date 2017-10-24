@@ -16,17 +16,17 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "rails", ">=3"
+  s.add_dependency "rails", "~> 4"
   s.add_dependency "friendly_id"
   s.add_dependency "redcarpet"
   s.add_dependency "kaminari"
   s.add_dependency "jquery-rails"
   s.add_dependency "sass-rails"
   s.add_dependency "truncate_html"
-  s.add_dependency "paperclip", ">=3"
+  s.add_dependency "paperclip", "~> 4.3"
   s.add_dependency "aws-sdk", '< 2.0'
   s.add_dependency "bourbon"
-  s.add_dependency "neat"
+  s.add_dependency "neat", '~> 1'
   s.add_dependency "pickadate-rails"
   s.add_dependency "jquery-fileupload-rails"
   s.add_dependency "github-markup"

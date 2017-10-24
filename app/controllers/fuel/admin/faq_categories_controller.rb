@@ -41,11 +41,6 @@ module Fuel
       end
 
       def destroy
-        @faq_category.faqs.each do |faq|
-          faq.faq_category = nil
-          faq.save
-        end
-
         @faq_category.destroy
         redirect_to fuel.admin_faq_categories_path, notice: 'Faq Category was successfully deleted'
       end

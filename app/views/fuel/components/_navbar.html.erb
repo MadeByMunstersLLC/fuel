@@ -24,6 +24,16 @@
           <%= image_tag("fuel/icons/tag-icon.svg", class: "navbar-link-icon") %> Tags
         </li>
       <% end %>
+      <%= link_to fuel.admin_faqs_path do %>
+        <li class="navbar-link">
+          <%= image_tag("fuel/icons/faq-icon.svg", class: "navbar-link-icon") %> Faqs
+        </li>
+      <% end %>
+      <%= link_to fuel.admin_faq_categories_path do %>
+        <li class="navbar-link">
+          <%= image_tag("fuel/icons/cat-icon.svg", class: "navbar-link-icon") %> Faq Cats
+        </li>
+      <% end %>
     </ul>
   </nav>
 </aside>

@@ -14,18 +14,22 @@ label {
 fieldset {
   @include rem(margin-bottom, 30px);
 
-  &.small { @include rem(margin-bottom, 15px);  }
+  &.small {
+    @include rem(margin-bottom, 15px);
+  }
 }
 
 // Inputs
 #{$all-text-inputs},
 input,
-input[type="file"],
+input[type='file'],
 select,
-textarea{
+textarea {
   @include appearance(none);
   @include font-type($primary-sans-serif, normal, 300);
-  @include placeholder{ font-style: italic; }
+  @include placeholder {
+    font-style: italic;
+  }
   @include s-golf;
   background-color: $white-base;
   border: 1px solid $grey-light;
@@ -37,19 +41,21 @@ textarea{
   -webkit-font-smoothing: antialiased;
   -ms-appearance: none;
 
-  &:focus{
+  &:focus {
     @include box-shadow(0 0 0, transparent);
     border-color: $grey-light;
     outline: none;
   }
 }
 
-input[type="submit"] {
+input[type='submit'] {
   @include s-golf;
   border: none;
   width: inherit;
 
-  &:hover { cursor: pointer; }
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .datepicker {
@@ -61,11 +67,21 @@ input[type="submit"] {
 
 // Specific Teaser Heights
 textarea {
-  &.tease { @include rem(height, 60px); }
-  &.post { @include rem(height, 350px); }
+  &.tease {
+    @include rem(height, 60px);
+  }
+  &.post {
+    @include rem(height, 350px);
+  }
+  &.faq_question {
+    @include rem(height, 150px);
+  }
+  &.faq_answer {
+    @include rem(height, 250px);
+  }
 }
 
-select{
+select {
   background-image: image-url('fuel/icons/dropdown-arrow-icon.svg');
   background-position: 97%;
   background-repeat: no-repeat;
@@ -77,7 +93,6 @@ select{
   background-image: none;
 }
 
-
 // Form layouts/groups
 .half-group {
   @include span-columns(6 of 12);
@@ -87,11 +102,12 @@ select{
   }
 }
 
-.third-group { @include span-columns(4 of 12); }
+.third-group {
+  @include span-columns(4 of 12);
+}
 
 .half-group,
 .third-group {
-
   &.last {
     @include rem(margin-bottom, 20px);
     margin-right: 0;
@@ -102,7 +118,6 @@ a.delete-post {
   float: right;
   @include s-golf;
 }
-
 
 // Progresss Bars
 .progress {

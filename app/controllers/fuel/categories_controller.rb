@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Fuel
   class CategoriesController < FuelController
     before_action :find_category, only: [:show]
@@ -16,7 +18,7 @@ module Fuel
       end
     end
 
-  private
+    private
 
     def find_category
       @category = Fuel::Category.find_by_slug(params[:slug])
